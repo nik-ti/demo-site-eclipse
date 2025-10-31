@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Sparkles, Zap, Mail, Award, Shield, Globe, ArrowRight, Star, TrendingUp, Users, CheckCircle } from 'lucide-react';
 
 function App() {
@@ -452,6 +453,19 @@ function App() {
           </div>
         </div>
       </footer>
+      {typeof window !== 'undefined' && createPortal(
+        <a
+          href="https://simple-flow.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Built by Simple Flow"
+          className="pointer-events-auto fixed bottom-5 right-5 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-medium px-4 py-2 rounded-full shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition-all"
+          style={{ zIndex: 2147483647 }}
+        >
+          Built by Simple Flow
+        </a>,
+        document.body
+      )}
     </div>
   );
 }
